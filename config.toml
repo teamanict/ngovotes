@@ -1,0 +1,41 @@
+[webserver]
+header = "Fiber"
+app_name = "Ngovotes Test App v1.0.1"
+port = ":3000"
+prefork = false
+
+[logger]
+enabled = false
+timezone = "Local"
+timeformat = "02/01/2006 15:36"
+format = "${cyan}[FIBER]${reset} ${time} |${red}${status}${reset}|\t ${latency} |\t\t ${ip} | ${blue}${method}${reset} ${path}\n"
+
+[limiter]
+enabled = false
+max = 20
+expiration_seconds = 60
+
+[session]
+enabled = true
+expiration_hours = 24
+
+[compress]
+enabled = true
+level = 2
+
+[recover]
+enabled = true
+
+[monitor]
+enabled = true
+
+[filesystem]
+enabled = true
+browse = true
+max_age = 3600
+index = "index.html"
+root = "./storage/public"
+
+[views]
+folder = "./views"
+extension = ".html"
